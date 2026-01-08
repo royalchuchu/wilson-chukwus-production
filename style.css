@@ -13,6 +13,14 @@ body {
 }
 
 /* NAVBAR */
+#navMenu {
+  display: none;
+}
+
+#navMenu.show {
+  display: flex;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -62,6 +70,17 @@ body {
   border: 1px solid #f5f5f5;
   color: #f5f5f5;
 }
+.menu-toggle {
+  display: none; 
+  cursor: pointer;
+}
+
+.menu-toggle img {
+  width: 28px;    
+  height: 28px;
+  object-fit: contain;
+}
+
 
 /* HERO */
 /* HERO VIDEO BACKGROUND */
@@ -98,12 +117,6 @@ body {
   z-index: 2;
   width: 2000px;
  padding: 200px;
-
-
-
-
-
-
   background: rgba(15, 15, 15, 0.55);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -228,44 +241,56 @@ footer {
 }
 /* HAMBURGER */
 .menu-toggle {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
+
+  position: relative;
+  z-index: 2000; 
+
 }
 
 /* MOBILE NAV */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
   .menu-toggle {
     display: block;
+    z-index: 1001;
   }
 
   .navbar {
-    flex-direction: row;
-    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 20px;
+    background: rgba(10,10,10,0.95);
+    z-index: 1000;
   }
 
-  .navbar nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: rgba(10,10,10,0.95);
-    backdrop-filter: blur(12px);
+  #navMenu {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.98);
     display: none;
     flex-direction: column;
-    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
   }
 
-  .navbar nav a {
-    margin: 12px 0;
-    font-size: 15px;
+  #navMenu a {
+    font-size: 20px;
   }
 
-  .navbar nav.show {
+  #navMenu.show {
     display: flex;
   }
 }
+
 
 
 @media (max-width: 768px) {
