@@ -8,11 +8,24 @@
   <link rel="stylesheet" href="
   style.css" />
 </head>
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+</script>
+
 <body>
 
   <!-- NAVBAR -->
   <header class="navbar">
     <div class="logo">WILSON CHUKWUS MULTIMEDIA</div>
+    
+  <div class="menu-toggle" id="menuToggle">
+    ☰
+  </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
@@ -54,6 +67,8 @@
   muted
   loop
   playsinline
+ 
+  preload="none"
         src="Igbo culture in Lagos is a vibrant blend of tradition practices and urban influences, reflecting.mp4"
         frameborder="0"
         allow="autoplay; fullscreen"
@@ -67,6 +82,7 @@
   muted
   loop
   playsinline
+  preload="none"
         src="vid 1.mp4"
         frameborder="0"
         allow="autoplay; fullscreen"
@@ -81,6 +97,7 @@
   muted
   loop
   playsinline
+  preload="none"
         src="get.mp4"
         frameborder="0"
       

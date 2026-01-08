@@ -226,8 +226,92 @@ footer {
   font-size: 14px;
   opacity: 0.6;
 }
-@media (max-width: 900px) {
-  .showreel-grid {
-    grid-template-columns: 1fr;
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(12px);
+    display: none;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .navbar nav a {
+    margin: 12px 0;
+    font-size: 15px;
+  }
+
+  .navbar nav.show {
+    display: flex;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .hero-glass {
+    max-width: 90%;
+    padding: 35px 25px;
+  }
+
+  .hero-glass h1 {
+    font-size: 2rem;
+  }
+
+  .hero-glass p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons a {
+    display: block;
+    margin: 10px 0;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .services {
+    padding: 70px 20px;
+  }
+
+  .service-card {
+    padding: 30px 20px;
+    font-size: 1rem;
+  }
+
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 20px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
