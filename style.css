@@ -13,6 +13,14 @@ body {
 }
 
 /* NAVBAR */
+#navMenu {
+  display: none;
+}
+
+#navMenu.show {
+  display: flex;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -330,31 +338,5 @@ footer {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
-  }
-}
-@media (max-width: 768px) {
-
-  .showreel {
-    padding: 70px 16px;
-  }
-
-  .showreel-grid {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .showreel-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .showreel video {
-    min-width: 90vw;     /* BIG videos */
-    height: 260px;       /* taller */
-    border-radius: 14px;
-    scroll-snap-align: center;
-    flex-shrink: 0;
   }
 }
