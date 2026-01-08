@@ -64,10 +64,36 @@
 
 </section>
 
+<section class="showreel">
+  <h2>Showreel</h2>
+
+  <div class="showreel-grid">
+
+    <div class="reel">
+      <video src="How I spent Oct 1st 2025#videocreator #filmmaking #chu_ukwu_dii #oct1st.mp4" muted playsinline></video>
+      <div class="play-icon">▶</div>
+    </div>
+
+    <div class="reel">
+      <video src="Igbo culture in Lagos is a vibrant blend of tradition practices and urban influences, reflecting.mp4" muted playsinline></video>
+      <div class="play-icon">▶</div>
+    </div>
+
+    <div class="reel">
+      <video src="vid 1.mp4"
+       muted 
+       loop
+       
+       autoplay></video>
+      <div class="play-icon">▶</div>
+    </div>
+
+  </div>
+</section>
 
   <!-- SHOWREEL -->
 
-<section class="showreel">
+<!-- <section class="showreel">
   <h2>Showreel</h2>
 
   <div class="showreel-grid">
@@ -113,7 +139,7 @@
       </video>
     </div>
   </div>
-</section>
+</section> -->
 
   <!-- SERVICES PREVIEW -->
   <section class="services">
@@ -136,4 +162,35 @@
 <script>
   const video = document.querySelector(".bg-video");
   video.play().catch(() => {});
+</script>
+
+<script>
+  document.querySelectorAll(".showreel video").forEach(video => {
+    video.play().catch(() => {});
+  });
+</script>
+<script>
+  const reels = document.querySelectorAll(".reel video");
+
+  reels.forEach(video => {
+    video.parentElement.addEventListener("click", () => {
+
+      // Pause all other videos
+      reels.forEach(v => {
+        if (v !== video) {
+          v.pause();
+          v.parentElement.classList.remove("playing");
+        }
+      });
+
+      // Toggle current video
+      if (video.paused) {
+        video.play();
+        video.parentElement.classList.add("playing");
+      } else {
+        video.pause();
+        video.parentElement.classList.remove("playing");
+      }
+    });
+  });
 </script>
