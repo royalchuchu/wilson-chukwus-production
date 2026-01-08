@@ -13,13 +13,6 @@ body {
 }
 
 /* NAVBAR */
-#navMenu {
-  display: none;
-}
-
-#navMenu.show {
-  display: flex;
-}
 
 .navbar {
   display: flex;
