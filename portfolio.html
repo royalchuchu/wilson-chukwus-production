@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Wilson Chukwus Multimedia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+  const portfolioVideos = document.querySelectorAll(".portfolio-item video");
+
+  portfolioVideos.forEach(video => {
+    video.addEventListener("click", () => {
+
+      // Load video only when clicked
+      if (!video.src) {
+        video.src = video.dataset.src;
+      }
+
+      // Pause all other videos
+      portfolioVideos.forEach(v => {
+        if (v !== video) v.pause();
+      });
+
+      // Toggle play / pause
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (!menuToggle || !navMenu) {
+      console.error("Menu elements not found");
+      return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("show");
+      menuToggle.textContent =
+        navMenu.classList.contains("show") ? "✕" : "☰";
+    });
+  });
+</script>
+<body>
+
+<!-- NAVBAR (same as home) -->
+<header class="navbar">
+  <div class="logo">WILSON CHUKWUS MULTIMEDIA</div>
+
+     <div class="menu-toggle" id="menuToggle">
+      <img src="images-removebg-preview.png" alt="">
+    </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="btnup">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="portfolio-hero">
+  <h1>Portfolio</h1>
+  <p>
+    Every project is handled from concept to final delivery, including shooting,
+    editing, color grading, and sound design. I work closely with clients to ensure
+    each video aligns with their brand and goals
+  </p>
+</section>
+
+<!-- PORTFOLIO GRID -->
+<section class="portfolio">
+
+  <div class="portfolio-item">
+   <video
+  src="created-this-video-for-cdcare-ng-about-months-ago-though-never-got-to-post-but_y8xnQZeM.mp4"
+  controls
+  poster="thumb1.jpg"
+    muted
+    playsinline
+    preload="none">
+  </video>
+    <div class="portfolio-text">
+      <h3>Brand Commercial</h3>
+      <p>Promotional video created to showcase products and increase engagement.</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item">
+   <video
+ src="uniqueness-of-diversity-in-nigerian-culture-chu-ukwu-dii-wilsonchukz-produ_KmlXYV8X.mp4"
+  controls
+    muted
+    playsinline
+    preload="none">
+  </video>
+    <div class="portfolio-text">
+      <h3>Event Coverage</h3>
+      <p>Highlight video capturing key moments and atmosphere of the event.</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item">
+       <video
+ src="So one day while I was returning home from a project on the island for @adbondharvestandhomes wi.mp4"
+  controls
+    muted
+    playsinline
+    preload="none">
+  </video>
+    <div class="portfolio-text">
+      <h3>Social Media Content</h3>
+      <p>Short-form video optimized for Instagram and TikTok.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="portfolio-cta">
+  <h2>Interested in working together?</h2>
+  <a href="contact.html" class="btn primary">Get in Touch</a>
+</section>
+
+<footer>
+  <p>© 2026 Wilson Chukwus Multimedia</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
