@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About | Wilson Chuks Production</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (!menuToggle || !navMenu) {
+      console.error("Menu elements not found");
+      return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("show");
+      menuToggle.textContent =
+        navMenu.classList.contains("show") ? "✕" : "☰";
+    });
+  });
+</script>
+<body>
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <h1>About Me</h1>
+    <p>
+      I create videos that tell stories, capture moments,
+      and bring ideas to life.
+    </p>
+  </section>
+
+  <!-- ABOUT CONTENT -->
+  <section class="about-content">
+
+    <div class="about-text">
+      <h2>Who I Am</h2>
+      <p>
+        My name is Wilson Chuks, a videographer and video editor
+        passionate about visual storytelling. I work with
+        individuals, brands, and businesses to create high-quality
+        content that connects with audiences.
+      </p>
+
+      <p>
+        From planning and shooting to editing and final delivery,
+        I focus on quality, creativity, and clear communication
+        in every project.
+      </p>
+    </div>
+
+    <div class="about-text">
+      <h2>What I Stand For</h2>
+      <p>
+        I believe every video should have purpose. Whether it’s
+        a short social media clip or a full production, my goal
+        is to make content that feels professional, engaging,
+        and meaningful.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- WHY WORK WITH ME -->
+  <section class="why-section">
+    <h2>Why Work With Me</h2>
+
+    <div class="why-grid">
+      <div class="why-card">Creative storytelling</div>
+      <div class="why-card">High-quality visuals</div>
+      <div class="why-card">Clear communication</div>
+      <div class="why-card">On-time delivery</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <h2>Let’s Create Something Amazing</h2>
+    <a href="contact.html" class="cta-btn">Contact Me</a>
+  </section>
+
+</body>
+</html>

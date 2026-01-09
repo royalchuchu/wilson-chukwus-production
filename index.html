@@ -10,6 +10,69 @@
   style.css" />
 </head>
 <script>
+  const form = document.querySelector(".contact-form");
+  const successMessage = document.querySelector(".success-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // Simple validation (already done earlier)
+    let valid = true;
+    form.querySelectorAll("input, textarea").forEach(input => {
+      if (input.name !== "phone" && !input.value.trim()) {
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.style.display = "none";
+        successMessage.style.display = "block";
+        form.reset();
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
+
+<script>
+  const reel = document.querySelectorAll(".reel");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  reels.forEach(video => {
+    video.muted = true;
+    video.playsInline = true;
+    observer.observe(video);
+  });
+</script>
+
+<script>
   document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menuToggle");
     const navMenu = document.getElementById("navMenu");
@@ -26,6 +89,7 @@
     });
   });
 </script>
+
 
 <body>
   <header class="navbar">
@@ -58,6 +122,7 @@
       <p>Visual stories that capture attention and convert.</p>
 
       <div class="hero-buttons">
+        
         <a href="portfolio.html" class="btn">View Portfolio</a>
         <a href="contact.html" class="btn outline">Get in Touch</a>
       </div>
@@ -70,33 +135,56 @@
 <div class="showreel-grid">
 
   <div class="reel">
-    <video src="Igbo culture in Lagos is a vibrant blend of tradition practices and urban influences, reflecting.mp4" muted playsinline></video>
+    <video src="Igbo culture in Lagos is a vibrant blend of tradition practices and urban influences, reflecting.mp4" 
+     autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">></video>
   
   </div>
 
   <div class="reel">
-    <video src="get.mp4"  loop muted playsinline></video>
+    <video src="get.mp4"   autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata"></video>
     
   </div>
 
   <div class="reel">
-    <video src="vid 1.mp4" loop muted playsinline></video>
+    <video src="vid 1.mp4"  autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">></video>
     
   </div>
 
   <!-- NEW VIDEOS -->
   <div class="reel">
-    <video src="on.mp4" muted playsinline></video>
+    <video src="on.mp4"
+      autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">></video>
   
   </div>
 
   <div class="reel">
-    <video src="uniqueness-of-diversity-in-nigerian-culture-chu-ukwu-dii-wilsonchukz-produ_KmlXYV8X.mp4" loop muted playsinline></video>
+    <video src="uniqueness-of-diversity-in-nigerian-culture-chu-ukwu-dii-wilsonchukz-produ_KmlXYV8X.mp4"
+     autoplay
+  muted
+  loop
+  playsinline
+  preload="metadata">></video>
    
   </div>
 
   <div class="reel">
-    <video src="mijk.mp4" loop muted playsinline></video>
+    <video src="mijk.mp4" autoplay muted playsinline></video>
    
   </div>
 

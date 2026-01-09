@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Wilson Chuks Production</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+  const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", (e) => {
+    const inputs = form.querySelectorAll("input, textarea");
+    let valid = true;
+
+    inputs.forEach(input => {
+      const error = input.nextElementSibling;
+
+      // Skip optional phone field
+      if (input.name === "phone") return;
+
+      if (!input.value.trim()) {
+        valid = false;
+        if (error) error.style.display = "block";
+      } else {
+        if (error) error.style.display = "none";
+      }
+
+      // Email format check
+      if (input.type === "email" && input.value) {
+        const emailValid = /\S+@\S+\.\S+/.test(input.value);
+        if (!emailValid) {
+          valid = false;
+          if (error) error.style.display = "block";
+        }
+      }
+    });
+
+    if (!valid) {
+      e.preventDefault();
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (!menuToggle || !navMenu) {
+      console.error("Menu elements not found");
+      return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+      navMenu.classList.toggle("show");
+      menuToggle.textContent =
+        navMenu.classList.contains("show") ? "✕" : "☰";
+    });
+  });
+</script>
+<body>
+
+
+<!-- NAVBAR (same as home) -->
+<header class="navbar">
+  <div class="logo">WILSON CHUKWUS MULTIMEDIA</div>
+
+     <div class="menu-toggle" id="menuToggle">
+      <img src="images-removebg-preview.png" alt="">
+    </div>
+
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="btnup">Contact</a>
+  </nav>
+</header>
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+
+  <div class="contact-card">
+
+    <!-- LEFT -->
+    <div class="contact-info">
+      <h1>Start Your Next Project</h1>
+     
+<p>
+  Looking for high-quality video production or editing?
+  Share a few details about your project and I’ll respond
+  as soon as possible.
+</p>
+
+<span>
+  Videography • Video Editing • Showreels • Social Media Content
+</span>
+      <span>Videography • Editing • Showreels • Content Creation</span>
+    </div>
+
+    <!-- RIGHT -->
+    <form 
+  method="POST"
+  novalidate
+
+      class="contact-form"
+  action="https://formspree.io/f/xzddpdog"
+  method="POST"class="contact-form">
+
+<input type="text" name="firstName" placeholder="Your First Name" />
+<span class="error">Please enter your first name</span>
+
+<input type="email" name="email" placeholder="Your Email Address" />
+<span class="error">Please enter a valid email address</span>
+
+<input type="tel" name="phone" placeholder="Your Phone Number (Optional)" />
+
+<textarea
+  name="message"
+  rows="4"
+  placeholder="Tell me about your project"></textarea>
+<span class="error">Please tell me what you want</span>
+
+
+<button type="submit">Send Project Details</button>
+
+
+    </form>
+<!-- <a
+  href="https://wa.me/2348012345678?text=Hello%20I%20would%20like%20to%20work%20with%20you"
+  class="whatsapp-btn"
+  target="_blank">
+  Chat on WhatsApp
+</a> -->
+<div class="success-message">
+  <h2>Message Sent ✅</h2>
+  <p>
+    Thank you for reaching out. I’ll get back to you shortly.
+  </p>
+</div>
+
+  </div>
+
+</section>
+
+
+</body>
+</html>
