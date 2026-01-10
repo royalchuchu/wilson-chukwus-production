@@ -2,28 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/</loc>
-    <priority>1.0</priority>
+    <loc>https://royalchuchu.github.io/wilson-chukwus-production/</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/services.html</loc>
-    <priority>0.8</priority>
+    <loc>https://royalchuchu.github.io/wilson-chukwus-production/services.html</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/portfolio.html</loc>
-    <priority>0.8</priority>
+    <loc>https://royalchuchu.github.io/wilson-chukwus-production/about.html</loc>
   </url>
 
   <url>
-    <loc>https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/about.html</loc>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/contact.html</loc>
-    <priority>0.7</priority>
+    <loc>https://royalchuchu.github.io/wilson-chukwus-production/contact.html</loc>
   </url>
 
 </urlset>
